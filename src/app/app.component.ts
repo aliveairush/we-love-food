@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,11 @@ export class AppComponent implements OnInit {
   constructor(private _http: HttpClient) {}
 
   ngOnInit() {
-    this._http
-      .get('https://we-love-food-back.onrender.com/hello')
-      .subscribe((res: any) => {
-        this.title = res.answer;
-        console.log(res);
-      });
+    console.log(environment.domain);
+
+    this._http.get(environment.domain + 'hello').subscribe((res: any) => {
+      this.title = res.answer;
+      console.log(res);
+    });
   }
 }
