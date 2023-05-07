@@ -12,9 +12,11 @@ export class AppComponent implements OnInit {
   constructor(private _http: HttpClient) {}
 
   ngOnInit() {
-    this._http.get('http://localhost:3000/hello').subscribe((res: any) => {
-      this.title = res.answer;
-      console.log(res);
-    });
+    this._http
+      .get('https://we-love-food-back.onrender.com/hello')
+      .subscribe((res: any) => {
+        this.title = res.answer;
+        console.log(res);
+      });
   }
 }
