@@ -1,0 +1,16 @@
+._navbar {
+  justify-content: space-between;
+}
+
+a {
+  &:visited,
+  &:link,
+  &:hover {
+    color: white;
+    list-style: none;
+  }
+}
+
+._navbar__left > * + * {
+  padding-left: 1rem;
+}
